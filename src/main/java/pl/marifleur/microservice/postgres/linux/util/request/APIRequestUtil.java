@@ -1,6 +1,5 @@
 package pl.marifleur.microservice.postgres.linux.util.request;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -14,11 +13,11 @@ public class APIRequestUtil {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public Object sendAndReceiveResponse(
+    public ResponseEntity<String> sendAndReceiveResponse(
             String url,
             HttpMethod httpMethod,
             HttpHeaders httpHeaders,
-            Object body) {
+            Object body) throws Exception {
         RestTemplate restTemplate = new RestTemplate();
         RequestEntity requestEntity = null;
         if (httpMethod == HttpMethod.GET || httpMethod == HttpMethod.DELETE) {
@@ -27,23 +26,16 @@ public class APIRequestUtil {
                     .headers(httpHeaders)
                     .build();
         } else if (httpMethod == HttpMethod.POST || httpMethod == HttpMethod.PUT) {
-            try {
-                String bodyAsJson = objectMapper.writeValueAsString(body);
+            String bodyAsJson = objectMapper.writeValueAsString(body);
 
-                requestEntity = RequestEntity
-                        .method(httpMethod, url)
-                        .headers(httpHeaders)
-                        .body(bodyAsJson);
-
-            } catch (JsonProcessingException e) {
-                throw new RuntimeException(e);
-            }
+            requestEntity = RequestEntity
+                    .method(httpMethod, url)
+                    .headers(httpHeaders)
+                    .body(bodyAsJson);
         }
 
         RequestCallback requestCallback = restTemplate.httpEntityCallback(requestEntity);
         ResponseExtractor<ResponseEntity<String>> responseExtractor = restTemplate.responseEntityExtractor(String.class);
-        ResponseEntity<String> responseEntity = restTemplate.execute(url, httpMethod, requestCallback, responseExtractor);
-
-        return responseEntity;
+        return restTemplate.execute(url, httpMethod, requestCallback, responseExtractor);
     }
 }
