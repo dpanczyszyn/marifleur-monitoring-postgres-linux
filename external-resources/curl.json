@@ -1,0 +1,353 @@
+{
+  "logFiles": {
+    "getAllLogFiles": "curl --location --request GET 'http://localhost:8080/v1/logs?type=all'",
+    "getRecentLogFile": "curl --location --request GET 'http://localhost:8080/v1/logs?type=recent'"
+  },
+  "dbms": {
+    "getDbmsInfo": {
+      "curl": "curl --location --request GET 'http://localhost:8080/v1/dbms/info'",
+      "sampleOutput": {
+        "url": "jdbc:postgresql://192.168.0.14:5432",
+        "dataDirectory": "/var/lib/postgresql/12/main",
+        "logDirectory": "/var/lib/postgresql/12/main/log",
+        "configFile": "/etc/postgresql/12/main/postgresql.conf",
+        "logFileName": "postgresql-%Y-%m-%d_%H%M%S.log",
+        "diskUsage": {
+          "partitionName": "/dev/nvme0n1p9",
+          "total": 162136964,
+          "used": 55830468,
+          "available": 97997556,
+          "usagePercentage": 34.43
+        },
+        "cpuInfo": {
+          "cpuUsage": 13.63,
+          "numberOfCPUs": 8
+        }
+      }
+    }
+  },
+  "database": {
+    "getAllDatabases": {
+      "curl": "curl --location --request GET 'http://localhost:8080/v1/database'",
+      "sampleOutput": [
+        "marifleur"
+      ]
+    }
+  },
+  "table": {
+    "getAllTablesForDatabase": {
+      "curl": "curl --location --request GET 'http://localhost:8080/v1/table?database-name=${databaseName}'",
+      "sampleOutput": [
+        {
+          "schema": "public",
+          "name": "category",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "contact",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "business_entity_identification_number",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "company_address",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "company_name",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "phone_number",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "tax_payer_identification_number",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "image",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "category_id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "created_at",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "image",
+              "type": "bytea",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "main_offer",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "subtitle",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "title",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "image",
+              "type": "bytea",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "offer",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "category_id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "image_id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "description",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "description_snippet",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "product",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "price",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "social_media",
+          "type": "table",
+          "owner": "postgresspring",
+          "columns": [
+            {
+              "name": "id",
+              "type": "uuid",
+              "collation": "",
+              "nullable": "not null",
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "url",
+              "type": "character varying(255)",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            },
+            {
+              "name": "image",
+              "type": "bytea",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "schema": "public",
+          "name": "test_table",
+          "type": "table",
+          "owner": "postgres",
+          "columns": [
+            {
+              "name": "name",
+              "type": "character varying",
+              "collation": "",
+              "nullable": "",
+              "defaultValue": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "sql": {
+    "executeSqlInDbms": {
+      "curl": "curl --location --request POST 'http://localhost:8080/v1/sql' --header 'Content-Type: application/json' --data '{\"sql\": \"SHOW data_directory;\"}'",
+      "sampleInput": {
+        "sql": "SHOW data_directory;"
+      },
+      "sampleOutput": {
+        "output": " /var/lib/postgresql/12/main\n\n"
+      }
+    },
+    "executeSqlInDatabase": {
+      "curl": "curl --location --request POST 'http://localhost:8080/v1/sql' --header 'Content-Type: application/json' --data '{\"sql\": \"\\d\", \"databaseName\": \"marifleur\"}'",
+      "sampleInput": {
+        "sql": "\\d",
+        "databaseName": "marifleur"
+      },
+      "sampleOutput": {
+        "output": " public | category     | table | postgresspring\n public | contact      | table | postgresspring\n public | image        | table | postgresspring\n public | main_offer   | table | postgresspring\n public | offer        | table | postgresspring\n public | product      | table | postgresspring\n public | social_media | table | postgresspring\n public | test_table   | table | postgres\n\n"
+      }
+    }
+  }
+}
