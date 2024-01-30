@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.*;
+import pl.marifleur.lib.util.format.FormatSpacesUtil;
+import pl.marifleur.lib.util.net.NetUtil;
+import pl.marifleur.lib.util.request.APIRequestUtil;
 import pl.marifleur.microservice.postgres.linux.dto.registration.RegistrationDTO;
-import pl.marifleur.microservice.postgres.linux.util.format.FormatSpacesUtil;
-import pl.marifleur.microservice.postgres.linux.util.net.NetUtil;
-import pl.marifleur.microservice.postgres.linux.util.request.APIRequestUtil;
 
 @Configuration
 public class RegisterServiceConfiguration {

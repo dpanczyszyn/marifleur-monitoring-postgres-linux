@@ -2,12 +2,11 @@ package pl.marifleur.microservice.postgres.linux.manager.dbms;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.marifleur.lib.util.cpu.CPUInfo;
+import pl.marifleur.lib.util.cpu.CPUInfoUtil;
+import pl.marifleur.lib.util.disk.DiskUsageUtil;
 import pl.marifleur.microservice.postgres.linux.configuration.DBMSConfiguration;
 import pl.marifleur.microservice.postgres.linux.dto.dbms.DbmsDTO;
-import pl.marifleur.microservice.postgres.linux.manager.sql.SqlExecutor;
-import pl.marifleur.microservice.postgres.linux.util.process.cpu.CPUInfo;
-import pl.marifleur.microservice.postgres.linux.util.process.cpu.CPUInfoUtil;
-import pl.marifleur.microservice.postgres.linux.util.process.disk.DiskUsageUtil;
 
 @Component
 public class DBMSManager {

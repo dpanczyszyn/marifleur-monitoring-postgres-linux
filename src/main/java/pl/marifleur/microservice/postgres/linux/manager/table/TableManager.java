@@ -2,11 +2,9 @@ package pl.marifleur.microservice.postgres.linux.manager.table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pl.marifleur.microservice.postgres.linux.configuration.DBMSConfiguration;
 import pl.marifleur.microservice.postgres.linux.dto.column.ColumnDTO;
 import pl.marifleur.microservice.postgres.linux.dto.table.TableDTO;
 import pl.marifleur.microservice.postgres.linux.manager.sql.SqlExecutor;
-import pl.marifleur.microservice.postgres.linux.util.process.ProcessUtil;
 
 import java.util.ArrayList;
 import java.util.List;

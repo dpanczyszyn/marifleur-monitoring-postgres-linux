@@ -4,10 +4,9 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import pl.marifleur.microservice.postgres.linux.dto.sql.SqlDTO;
+import pl.marifleur.lib.util.file.FileUtil;
+import pl.marifleur.lib.util.net.NetUtil;
 import pl.marifleur.microservice.postgres.linux.manager.sql.SqlExecutor;
-import pl.marifleur.microservice.postgres.linux.util.file.FileUtil;
-import pl.marifleur.microservice.postgres.linux.util.net.NetUtil;
 
 @Configuration
 public class DBMSConfiguration {

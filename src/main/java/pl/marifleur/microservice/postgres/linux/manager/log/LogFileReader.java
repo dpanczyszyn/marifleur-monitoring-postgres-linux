@@ -2,12 +2,12 @@ package pl.marifleur.microservice.postgres.linux.manager.log;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.marifleur.lib.util.file.FileUtil;
+import pl.marifleur.lib.util.format.DateTimeFormatUtil;
+import pl.marifleur.lib.util.process.ProcessUtil;
 import pl.marifleur.microservice.postgres.linux.configuration.DBMSConfiguration;
 import pl.marifleur.microservice.postgres.linux.dto.log.LogDTO;
 import pl.marifleur.microservice.postgres.linux.dto.log.LogEntryDTO;
-import pl.marifleur.microservice.postgres.linux.util.file.FileUtil;
-import pl.marifleur.microservice.postgres.linux.util.format.DateTimeFormatUtil;
-import pl.marifleur.microservice.postgres.linux.util.process.ProcessUtil;
 
 import java.io.File;
 import java.nio.file.attribute.BasicFileAttributes;

@@ -50,6 +50,12 @@
 			<version>2.20.0</version>
 			<scope>compile</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>pl.marifleur.lib.util</groupId>
+			<artifactId>util-lib</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

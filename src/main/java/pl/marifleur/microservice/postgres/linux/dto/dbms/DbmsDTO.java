@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.marifleur.microservice.postgres.linux.util.process.cpu.CPUInfo;
-import pl.marifleur.microservice.postgres.linux.util.process.disk.DiskUsage;
+import pl.marifleur.lib.util.cpu.CPUInfo;
+import pl.marifleur.lib.util.disk.DiskUsage;
 
 @AllArgsConstructor
 @NoArgsConstructor
